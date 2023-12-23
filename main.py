@@ -1,17 +1,21 @@
-from typing import Optional
+from typing import Optional, Self
+
+
+class LinkedListIndexError(IndexError):
+    ...
 
 
 class Node:
     def __init__(self, data: int) -> None:
         self.data = data
-        self.next: Optional["Node"] = None
+        self.next: Optional[Self] = None
 
 
 class LinkedListIterator:
-    def __init__(self, linked_list: "LinkedList") -> None:
-        self.current_node = linked_list.head
+    def __init__(self, llist: "LinkedList") -> None:
+        self.current_node = llist.head
 
-    def __iter__(self) -> "LinkedListIterator":
+    def __iter__(self) -> Self:
         return self
 
     def __next__(self) -> Node:
@@ -35,21 +39,24 @@ class LinkedList:
         self.tail = node
         return node
 
+    def __getitem__(self, index: int) -> Node:
+        for i, node in enumerate(self):
+            if i == index:
+                return node
+        raise LinkedListIndexError
+
     def __iter__(self) -> LinkedListIterator:
         return LinkedListIterator(self)
 
 
-l_list_1 = LinkedList()
+linked_list = LinkedList()
+for i in range(7):
+    linked_list.append(Node(i))
 
-for i in range(10):
-    l_list_1.append(Node(i))
-
-for node in l_list_1:
+for node in linked_list:
     print(node.data)
 
-nodes_list = [node for node in l_list_1]
-print(f"Реализация с помощью list-comprehension: {nodes_list}")
-
-squared_nodes_data = tuple(node.data ** 2 for node in l_list_1)
-print(f"Квадраты из значений Node: {squared_nodes_data}")
+nodes_data = [node.data for node in linked_list]
+squad_nodes_data = list(map(lambda node: node.data ** 2, linked_list))
+print(nodes_data, squad_nodes_data, sep="\n")
 
