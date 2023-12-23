@@ -10,7 +10,8 @@
 
 ### Схема
 
-![iterator_schema](https://github.com/starlite01/linked-list-iterator/assets/141623625/14124a25-2ea3-4826-8b79-d59b9f8d1819)
+![to_ginhub drawio](https://github.com/starlite01/linked-list-iterator/assets/141623625/5eb01ca5-c88e-457a-84dd-a8dcdc1714d7)
+
 
 
 
