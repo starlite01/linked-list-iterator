@@ -5,6 +5,7 @@
 - [Официальная Документация по Итераторам в Python](https://docs.python.org/3/library/stdtypes.html#typeiter)
 - [Подробно про list в Python](https://docs.python.org/3/library/stdtypes.html#list)
 - [Подробное объясние Связного Списка](https://youtu.be/TrHAcHGIdgQ?si=SjCce_mbAqyxt7FQ)
+- [Wiki](https://wiki.python.org/moin/Iterator)
 
 ---
 
