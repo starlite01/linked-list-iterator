@@ -46,3 +46,10 @@ for i in range(10):
 
 for node in l_list_1:
     print(node.data)
+
+nodes_list = [node for node in l_list_1]
+print(f"Реализация с помощью list-comprehension: {nodes_list}")
+
+squared_nodes_data = tuple(node.data ** 2 for node in l_list_1)
+print(f"Квадраты из значений Node: {squared_nodes_data}")
+
